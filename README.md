@@ -6,7 +6,7 @@
 
 3. [Features](#features)
 
-    3.1. Viewing help : [help](#3-1-viewing-help)
+    3.1. Viewing help : [help](#3-1-viewing-help-help)
     
     3.2. Adding an item: [add](#adding-an-item-add)
     
