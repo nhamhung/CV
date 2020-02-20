@@ -6,29 +6,29 @@
 
 3. [Features](#features)
 
-    3.1. Viewing help : [help](#3-1-viewing-help-help)
+    3.1. Viewing help : [help](#31-viewing-help)
     
-    3.2. Adding an item: [add](#adding-an-item-add)
+    3.2. Adding an item: [add](#32-adding-an-item-add)
     
-    3.3. Listing all items: [list](#listing-all-items-list)
+    3.3. Listing all items: [list](#33-listing-all-items-list)
     
-    3.4. Editing an item: [edit](#edit-an-item-edit)
+    3.4. Editing an item: [edit](#34-edit-an-item-edit)
     
-    3.5. Locating items by name: [find](#locating-items-by-name-find)
+    3.5. Locating items by name: [find](#35-locating-items-by-name-find)
     
-    3.6. Deleting an item: [delete](#deleting-an-item-delete)
+    3.6. Deleting an item: [delete](#36-deleting-an-item-delete)
     
-    3.7. Viewing items in a resume: [rview](#viewing-items-in-a-resume-rview)
+    3.7. Viewing items in a resume: [rview](#37-viewing-items-in-a-resume-rview)
     
-    3.8. Previewing a resume: [rpreview](#previewing-a-resume-rpreview)
+    3.8. Previewing a resume: [rpreview](#38-previewing-a-resume-rpreview)
     
-    3.9. Editing a resume: [redit](#editing-a-resume-redit)
+    3.9. Editing a resume: [redit](#39-editing-a-resume-redit)
     
-    3.10. Generating a resume: [rgen](#generating-a-resume-rgen)
+    3.10. Generating a resume: [rgen](#310-generating-a-resume-rgen)
     
-    3.11. Exiting the program : [exit](#exiting-the-program-exit)
+    3.11. Exiting the program : [exit](#311-exiting-the-program-exit)
     
-    3.12. Saving the [data](#)
+    3.12. Saving the [data](#312-saving-the-program-save)
     
     3.13. Encrypting data files [coming in [v2.0](#)]
     
@@ -204,6 +204,8 @@ Generates a `.pdf` file from resume object with id `ID`. The `ID` must be a **po
     Generates a `.pdf` file from resume object with `id` 1234.
 
 #### 3.11 Exiting the program: `exit`
+
+#### 3.12 Saving the program: `save`
 
 # FAQ
 # Command Summary
