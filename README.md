@@ -8,25 +8,25 @@
 
     3.1. Viewing help : [help](#viewing-help)<br>
     
-    3.2. Adding an item: [add](#)
+    3.2. Adding an item: [add](#adding-an-item-add)
     
-    3.3. Listing all items: [list](#)
+    3.3. Listing all items: [list](#listing-all-items-list)
     
-    3.4. Editing an item: [edit](#)
+    3.4. Editing an item: [edit](#edit-an-item-edit)
     
-    3.5. Locating items by name: [find](#)
+    3.5. Locating items by name: [find](#locating-items-by-name-find)
     
-    3.6. Deleting an item: [delete](#)
+    3.6. Deleting an item: [delete](#deleting-an-item-delete)
     
-    3.7. Viewing items in a resume: [rview](#)
+    3.7. Viewing items in a resume: [rview](#viewing-items-in-a-resume-rview)
     
-    3.8. Previewing a resume: [rpreview](#)
+    3.8. Previewing a resume: [rpreview](#previewing-a-resume-rpreview)
     
-    3.9. Editing a resume: [redit](#redit)
+    3.9. Editing a resume: [redit](#editing-a-resume-redit)
     
-    3.10. Generating a resume: [rgen](#rgen)
+    3.10. Generating a resume: [rgen](#generating-a-resume-rgen)
     
-    3.11. Exiting the program : [exit](#exit)
+    3.11. Exiting the program : [exit](#exiting-the-program-exit)
     
     3.12. Saving the [data](#)
     
@@ -202,6 +202,8 @@ Generates a `.pdf` file from resume object with id `ID`. The `ID` must be a **po
 
     > `rgen 1234` 
     Generates a `.pdf` file from resume object with `id` 1234.
+
+#### 3.11 Exiting the program: `exit`
 
 # FAQ
 # Command Summary
