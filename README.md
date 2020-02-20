@@ -1,22 +1,39 @@
 # ResuMe User Guide
 
 1. [Introduction](#introduction)
+
 2. [Quick Start](#quick-start)
+
 3. [Features](#features)
+
     3.1. Viewing help : [help](#viewing-help)
+
     3.2. Adding an item: [add](#)
+    
     3.3. Listing all items: [list](#)
+    
     3.4. Editing an item: [edit](#)
+    
     3.5. Locating items by name: [find](#)
+    
     3.6. Deleting an item: [delete](#)
+    
     3.7. Viewing items in a resume: [rview](#)
+    
     3.8. Previewing a resume: [rpreview](#)
+    
     3.9. Editing a resume: [redit](#redit)
+    
     3.10. Generating a resume: [rgen](#rgen)
+    
     3.11. Exiting the program : [exit](#exit)
+    
     3.12. Saving the [data](#)
+    
     3.13. Encrypting data files [coming in [v2.0](#)]
-4. [FAQ](#fa1)
+    
+4. [FAQ](#faq)
+
 5. [Command Summary](#command-summary)
 
 # 1. Introduction
