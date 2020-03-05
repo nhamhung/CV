@@ -8,9 +8,9 @@
 
     3.1. Viewing help : [help](#viewing-help)
 
-    3.2. Adding an item: [add](#)
+    3.2. Listing all items: [list](#)
     
-    3.3. Listing all items: [list](#)
+    3.3. Adding an item: [add](#)
     
     3.4. Editing an item: [edit](#)
     
@@ -34,7 +34,7 @@
     
 4. [FAQ](#faq)
 
-5. [Command Summary](#command-summary)
+5. [Command Summary](#5command-summary)
 
 # 1. Introduction
 **ResuMe** is for those who **prefer to use a desktop app for managing resumes**. More importantly, **ResuMe** is **optimized for those who prefer to work with a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, **ResuMe** can get your resume management tasks done faster than traditional GUI apps. Interested? Jump to the Section 2, “Quick Start” to get started. Enjoy!
@@ -87,7 +87,19 @@ Lists out the function and usage of each command.
 
 Format: `help`
 
-#### 3.2. Adding an item: `add`
+#### 3.2. Listing all items: `list`
+
+```sh
+List items in the storage.
+```
+Format `list [-TYPE]`
+
+* List items that have type matches the `TYPE` argument. If no `TYPE` is given, all items will be listed.
+
+* Listed items are in short form, only showing their name and `ID`. To view items in full, use `view`.
+
+
+#### 3.3. Adding an item: `add`
 ```sh
 Adds an item to the ResuMe application.
 ```
@@ -105,26 +117,17 @@ Format: `add -TYPE n/NAME [ATTRIBUTE/VALUE]... [#/TAG]...`
 
 + Name is a **compulsory** field of add command, while other attributes are *optional*.
 
++ Other optional attributes depend on the type of the item. Eg. project items will have `FROM, TO, DESCRIPTION`.
+
 + Any item, excluding tags, could have any number of tags *(including 0)*.
 
-+ A **unique  id** is generated, and will be used to uniquely identify the item in the later commands.
++ A unique `ID` is generated, and will be used to uniquely identify the item in the later commands.
 
 + Examples:
 
     > `add -edu n/National University of Singapore f/Aug 2018 t/May 2022 d/Bachelor of Computing`
 
     > `add -proj n/Orbital f/May 2019 t/July 2019 d/Independent Software Project #/Software Engineer #/UX #UI`
-
-#### 3.3. Listing all items: `list`
-
-```sh
-List items in the storage.
-```
-Format `list -TYPE`
-
-* List items that have type matches the `TYPE` argument. If no `TYPE` is given, all items will be listed.
-
-* Listed items are in short form, only showing their name and `ID`. To view items in full, use `view`.
 
 #### 3.4. Editing an item: `edit`
 ```sh
@@ -148,17 +151,17 @@ Format: `edit -TYPE ID [ATTRIBUTE/VALUE]... [#/TAG]...`
 
 + Existing values will be updated to the input values.
 
-+ When editing tags, **existing tags of the person will be removed** i.e adding of tags is not cumulative.
++ When editing tags, existing tags of the person will be removed. <br> i.e adding of tags is not cumulative.
 
 + You can remove **all** the person’s tags by typing `#/` without specifying any tags after it.
 
 + Examples:
 
     > `edit -edu 9823 t/May 2023 d/Bachelor of Science`
-Edits the ‘from’ and ‘description’ attributes of the education item with ID 9823 to be `May 2023` and `Bachelor of Science` respectively.
+    <br> Edits the ‘from’ and ‘description’ attributes of the education item with ID 9823 to be `May 2023` and `Bachelor of Science` respectively.
 
     > `edit -proj 14 n/CP2106 Orbital #/`
-Edits the 'name' of the project item with `ID` 14 to be `CP2106 Orbital` and clears all existing tags.
+    <br> Edits the 'name' of the project item with `ID` 14 to be `CP2106 Orbital` and clears all existing tags.
 
 #### 3.5. Locating items by name: `find`
 
@@ -170,11 +173,11 @@ Format: `find -TYPE KEYWORD [MORE_KEYWORDS]`
 + At least one keyword must be provided.
 
 + The search is **case insensitive**. 
-    > *e.g. orbital will match Orbital*
+    > e.g. orbital will match Orbital
 
 
 + The **order** of the keywords does **not** matter. 
-    > *e.g. Orbital CP2106 will match CP2106 Orbital*
+    > e.g. Orbital CP2106 will match CP2106 Orbital
 
 + If the `TYPE` is not specified. The program will search across **_all_** items.
 
@@ -184,12 +187,12 @@ Format: `find -TYPE KEYWORD [MORE_KEYWORDS]`
 + Examples:
 
     > `find -project Orbital CP2106`
-Returns the project item CP2106 Orbital
+    <br> Returns the project item CP2106 Orbital
 
     > `find NUS`
-Returns **_all_** items with `NUS`. 
+    <br> Returns **_all_** items with `NUS`. 
 
-    > *e.g. `NUS Valedictorian, NUS`*
+    > e.g. `NUS Valedictorian, NUS`
 
 
 #### 3.6. Deleting an item: `delete`
@@ -207,25 +210,29 @@ Format: `delete -TYPE ID`
 + Examples:
 
     > `delete -edu 9823`
-Deletes the education item with `ID` 9823.
+    <br> Deletes the education item with `ID` 9823.
 
     > `delete -proj 14`
-Deletes the project item with `ID` 14. 
+    <br> Deletes the project item with `ID` 14. 
 
-#### 3.7. Viewing items: `rview`
+#### 3.7. Viewing items: `view`
 
 ```sh
 Shows all items in an existing resume.
 ```
 
-Format: `rview ID`
+Format: `view -TYPE ID`
 
 + Examples: 
 
-    > `rview 135`
-    Shows the resume with `ID` 135, listing all of its items.
+    > `view -res 135`
+    <br> Shows the resume with `ID` 135, listing all of its items.
 
+    > `view -edu 123`
+    <br> Shows the education item with `ID` 123, listing all of its attributes.
+                                                                                                          
 #### 3.8. Previewing a resume: `rpreview`
+
 ```sh
 Previews the resume in string format.
 ```
@@ -234,7 +241,7 @@ Format: `rpreview RESUME_ID`
 
 + Examples: 
     > `rpreview 135`
-    Shows the text format  of the resume with `RESUME_ID` 135.
+    <br> Shows the text format  of the resume with `RESUME_ID` 135.
 
 #### 3.9. Editing a resume: `redit`
 
@@ -242,36 +249,109 @@ Format: `rpreview RESUME_ID`
 Edits an existing resume in the ResuMe application
 ```
 
-Format: `redit RESUME_ID [TYPE/ITEM_ID...] [MORE_TYPE/[ITEM_ID...]]... [#/TAG]...`
+Format: `redit RESUME_ID TYPE/[ITEM_ID...] [MORE_TYPE/[ITEM_ID...]]... [#/TAG]...`
 
-Edits the resume with the specified `ID`. The `ID` refers to the **unique** identification number given to the item when it was first added. The ID must be a **positive integer** that identifies an existing item of that type. At least **one** of the **optional** fields must be provided.
++ Edits the resume with the specified `RESUME_ID`. The `RESUME_ID` refers to the unique identification number 
+given to the item when it was first added. The `ITEM_ID` and `RESUME_ID`
+ must be a positive integer that identifies an existing item of that type. 
+ 
++ The `TYPE` to be edited cannot be resume(`res`) and at least one `TYPE` must be provided.
+ 
++ For each `TYPE`, existing values will be updated to the input values.
 
-Existing values will be updated to the input values.
++ You can add multiple items of a certain type to a resume by chaining `ITEM_ID` after
+`TYPE/` <br> e.g. `edu/ 123 109` 
 
-When editing object types and tags, existing **object types** and **tags** of the person will be removed 
-
-> i.e adding of object types and tags are not cumulative.
-
-You can remove **all** the resume’s tags by typing `#/` without specifying any tags after it. Similarly, you can remove **all** items of type `TYPE` by typing  `TYPE/` without specifying any `ID` after it. 
++ You can remove all the resumes' tags by typing `#/` without specifying any tags after it. 
+Similarly, you can remove all items of type `TYPE` by typing `TYPE/` without specifying
+any `ITEM_ID` after it.
 
 + Examples:
     > `redit 135 edu/9823 achv/102 201`
-Edits the resume of `ID` 135, overriding education content with education item of `ID` 9823, achievement content with achievement items of `ID` 102 and 201. Content of other object types in the resume remain unchanged.
+    <br> Edits the resume of `RESUME_ID` 135, overriding education content with 
+              education item of `ITEM_ID` 9823, achievement content with 
+              achievement items of `ITEM_ID` 102 and 201. Content of other object 
+              types in the resume remain unchanged.
 
     > `redit 148 edu/ int/ proj/`
-Edits the resume of `ID` 135, overriding education content, internship content and project content with empty string. This effectively deletes all education, internship, and project items from the resume. Content of other object types in the resume remain unchanged.
+    <br> Edits the resume of `RESUME_ID` 135, overriding education content, 
+    internship content and project content with empty string. This effectively 
+    deletes all education, internship, and project items from the resume. Content of other object types in the resume 
+    remain unchanged.
 
 #### 3.10. Generating a resume: `rgen`
+
+```sh
 Generates a `.pdf` file from an existing resume object.
+```
 
-Format: `rgen ID`
+Format: `rgen RESUME_ID`
 
-Generates a `.pdf` file from resume object with id `ID`. The `ID` must be a **positive integer** that identifies an existing item.	
+Generates a `.pdf` file from resume object with id `RESUME_ID`. 
+The `RESUME_ID` must be a positive integer that identifies an existing item.	
 
 + Examples: 
 
     > `rgen 1234` 
-    Generates a `.pdf` file from resume object with `id` 1234.
+    Generates a `.pdf` file from resume object with `RESUME_ID` 1234.
 
-# FAQ
-# Command Summary
+#### 3.11. Exiting the application: `exit`
+
+```sh
+Exits the program.
+```
+
+Format: `exit`
+
+#### 3.12. Saving the data
+ResuMe data is saved in the hard disk automatically after any command that changes the data. 
+There is no need to save manually.
+
+# 4. FAQ
+Q: What is the difference between `redit` and `edit -res`?
+
+A: `redit` is used when you want to add/remove certain items from your resume. 
+<br> `edit -res` is used when you want to edit attributes of the resume, like its name or tags.
+
+Q: How do I transfer my data to another Computer?
+
+A: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.
+
+# 5. Command Summary
+Command Summary
+
+**Help:** `help`
+
+**List:** `list [-TYPE]`
+
+**Add:** `add -TYPE n/NAME [ATTRIBUTE/VALUE]... [#/TAG]...`
++ Personal details: `add -pd n/NAME [p/PHONE_NUMBER] [e/EMAIL] [g/GITHUB] [#/TAG]...`
++ Education: `add -edu n/NAME [f/FROM] [t/TO] [d/DESCRIPTION] [#/TAG]...`
++ Achievement: `add -achv n/NAME [t/TIME] [d/DESCRIPTION] [#/TAG]...`
++ Internship: `add -int n/NAME [f/FROM] [t/TO] [d/DESCRIPTION] [#/TAG]...`
++ Project: `add -proj n/NAME [f/FROM] [t/TO] [d/DESCRIPTION] [#/TAG]...`
++ Skill: `add -ski n/NAME [#/TAG]...`
++ Resume: `add -res n/NAME [#/TAG]...`
+
+**Edit:** `edit -TYPE [n/NAME] [ATTRIBUTE/VALUE]... [#/TAG]...`
++ Personal `details: edit -pd [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [g/GITHUB] [#/TAG]...`
++ Education: `edit -edu [n/NAME] [f/FROM] [t/TO] [d/DESCRIPTION] [#/TAG]...`
++ Achievement: `edit -achv [n/NAME] [t/TIME] [d/DESCRIPTION] [#/TAG]...`
++ Internship: `edit -int [n/NAME] [f/FROM] [t/TO] [d/DESCRIPTION] [#/TAG]...`
++ Project: `edit -proj [n/NAME] [f/FROM] [t/TO] [d/DESCRIPTION] [#/TAG]...`
++ Skill: `edit -ski [n/NAME] [#/TAG]...`
++ Resume: `edit -res [n/NAME] [#/TAG]...`
+
+**Find:** `find -TYPE KEYWORD [MORE_KEYWORDS]`
+
+**Delete:** `delete -TYPE ID`
+
+**View:** `view -TYPE ID`
+
+**Preview Resume:** `rpreview RESUME_ID`
+
+**Edit Resume:** `redit RESUME_ID TYPE/[ITEM_ID...] [MORE_TYPE/[ITEM_ID...]]... [#/TAG]...`
+
+**Generate Resume:** `rgen RESUME_ID`
+
+**Exit:** `exit`
