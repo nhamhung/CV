@@ -1,42 +1,81 @@
 body {
-  font-family: sans-serif;
-  background: #fdcb9e;
-  color: white;
   text-align: center;
-  font-size: 1vw;
-  margin-bottom: 5%;
+  background-color: #283149;
 }
 
 h1 {
-  font-size: 3vw;
-  color: #d63447;
+  font-size: 5rem;
+  color: #DBEDF3;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 #DA0463;
+
 }
 
-.container {
-  margin: 0px 3em 0px 3em;
+footer {
+  color: #DBEDF3;
+  font-family: sans-serif;
 }
 
-.sound {
-  text-align: center;
-  border: 5px solid #ccb03b;
-  border-radius: 20px;
-  background: #3f3f44;
-  margin: 10px;
+.w {
+
+}
+
+.a {
+
+}
+
+.s {
+
+}
+
+.d {
+
+}
+
+.j {
+
+}
+
+.k {
+
+}
+
+.l {
+
+}
+
+.set {
+  margin: 10% auto;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
+
+.red {
+  color: red;
+}
+
+.drum {
+  outline: none;
+  border: 10px solid #404B69;
+  font-size: 5rem;
+  font-family: 'Arvo', cursive;
+  line-height: 2;
+  font-weight: 900;
+  color: #DA0463;
+  text-shadow: 3px 0 #DBEDF3;
+  border-radius: 15px;
   display: inline-block;
-  width: 20%;
-}
-
-img {
-  width: 20%;
-  height: auto;
-}
-
-#stopButton img {
-  transform: scaleX(4);
-}
-
-.linh {
-    border-radius: 80%;
-    width: 30%;
-    margin: 3% 0 5%;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
 }
